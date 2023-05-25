@@ -2,7 +2,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path';
-import typescript2 from 'rollup-plugin-typescript2';
 import typescript from '@rollup/plugin-typescript'
 import dts from "vite-plugin-dts";
 import { fileURLToPath } from 'url';
@@ -24,19 +23,6 @@ export default defineConfig({
         "test/**/*.ts"
       ]
     }),
-    // typescript2({
-    //   check: false,
-    //   include: ["src/components/**/*.vue"],
-    //   tsconfigOverride: {
-    //     compilerOptions: {
-    //       outDir: "dist",
-    //       sourceMap: true,
-    //       declaration: true,
-    //       declarationMap: true,
-    //     },
-    //   },
-      // exclude: ["vite.config.ts", "src/assets/*"]
-    // })
   ],
   test: {
     globals: true,
@@ -60,6 +46,7 @@ export default defineConfig({
           if (assetInfo.name === 'main.css') return 'vue-circle-flags.css';
           return assetInfo.name;
         },
+        sourcemap: true,
         exports: "named",
         globals: {
           vue: 'Vue',
