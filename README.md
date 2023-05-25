@@ -89,13 +89,13 @@ Once the plugin is registered in your app, in your template you can call it:
 
 | Property | Description | Type | Value
 |:--|:--|:--|:--|
-| country | identifier of the country | `string` | one of the codes defined [here](#available-flags) |
+| country | identifier of the country | `string` | one of the codes defined [here](#available-flags-) |
 
 **Optional properties**
 
 | Property | Description | Type | Value
 |:--|:--|:--|:--|
-| size | Flag size | `string` | `small`, `medium`, `large` (for custom size see [here](#custom-size) |
+| size | Flag size | `string` | `small`, `medium`, `large` (for custom size see [here](#custom-size-) |
 | strokeWidth | Stroke size in pixels | `number` | `0` or `undefined` for no stroke |
 | strokeColor | Stroke color | `string` | e.g.: `#000000`, `red`, ... 
 | showFlagName | Show flag name in english when hover | `boolean` | e.g.: `true`, `false` |
