@@ -25,6 +25,7 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "test-single": "vitest run",
     "coverage": "vitest run --coverage",
     "lint": "eslint --ext .js,.ts --ignore-path .eslintignore .",
     "prettier-format": "prettier --vue-indent-script-and-style --config .prettierrc --write \"src/**/*.{ts,js,vue}\" \"test/**/*.{ts,js}\" \"utils/**/*.{ts,js}\""
