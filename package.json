@@ -67,6 +67,13 @@
     "country",
     "countries"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luizzappa/vue-circle-flags"
+  },
+  "bugs": {
+    "url": "https://github.com/luizzappa/vue-circle-flags/issues"
+  },
   "author": "Luiz Zappa (luizzappa@hotmail.com)",
   "license": "MIT"
 }
