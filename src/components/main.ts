@@ -1,5 +1,6 @@
 import type { App } from 'vue';
 import { CircleFlags } from '@/components';
+import { countryCodes, countryList } from '@/defs/country';
 
 export default {
   install: (app: App) => {
@@ -7,4 +8,4 @@ export default {
   }
 };
 
-export { CircleFlags };
+export { CircleFlags, countryCodes, countryList };
