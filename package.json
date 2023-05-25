@@ -13,6 +13,10 @@
     ".": {
       "import": "./dist/vue-circle-flags.es.js",
       "require": "./dist/vue-circle-flags.cjs.js"
+    },
+    "./dist/vue-circle-flags.css": {
+      "import": "./dist/vue-circle-flags.css",
+      "require": "./dist/vue-circle-flags.css"
     }
   },
   "types": "./dist/components/main.d.ts",

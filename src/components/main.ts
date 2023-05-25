@@ -7,4 +7,4 @@ export default {
   }
 };
 
-export { CircleFlags as CircleFlag };
+export { CircleFlags };

@@ -57,7 +57,7 @@ export default defineConfig({
       external: ['vue'],
       output: {
         assetFileNames: (assetInfo) => {
-          // if (assetInfo.name === 'main.css') return 'my-library-vue-ts.css';
+          if (assetInfo.name === 'main.css') return 'vue-circle-flags.css';
           return assetInfo.name;
         },
         exports: "named",
