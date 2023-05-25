@@ -2,7 +2,7 @@
 
 A Vue 3 component with 400+ circular SVG country flags 🚩. Base on [circle-flags](https://github.com/HatScripts/circle-flags)
 
-👉 [Live demo](https://luizzappa.github.io/codemirror-app-spreadsheet/)
+👉 [Live demo](https://q3lwoq.csb.app/)
 
 ## Features
 
