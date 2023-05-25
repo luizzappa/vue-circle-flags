@@ -1,6 +1,6 @@
 # Vue Circle Flags 
 
-A Vue 3 component with 400+ circular SVG country flags 🚩. Base on [circle-flags](https://github.com/HatScripts/circle-flags)
+A Vue 3 component with 400+ circular SVG country flags 🚩 (base on [circle-flags](https://github.com/HatScripts/circle-flags))
 
 ![image](https://github.com/luizzappa/vue-circle-flag/assets/65685842/15473c0d-3cdd-48b0-ac0f-cc65181995ed)
 
@@ -489,4 +489,4 @@ div.circle-flags {
 
 ## Contributing 💙
 
-Follow the [guidelines](https://github.com/luizzappa/vue-circle-flags/blob/master/CONTRIBUTING.md).
+Follow the [guidelines](https://github.com/luizzappa/vue-circle-flags/blob/main/CONTRIBUTING.md).
