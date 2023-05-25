@@ -4,7 +4,7 @@
 
 We use the issue tracking system of the GitHub. Please follow these recomendations before openning an issue:
 
-- Search the [issue tracker](https://github.com/luizzappa/vue-circle-flags/isseus) to check if already reported the problem.
+- Search the [issue tracker](https://github.com/luizzappa/vue-circle-flags/issues) to check if already reported the problem.
 - If it does not exist, create a new issue.
 - Detail the problem with as much information as possible
 - If possible create a test case
