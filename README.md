@@ -25,7 +25,7 @@ npm install vue-circle-flags
 In your `main` file:
 
 ```js
-import CircleFlags from "vue-circle-flags";
+import { CircleFlags } from "vue-circle-flags";
 import "vue-circle-flags/dist/vue-circle-flags.css";
 
 import { createApp } from "vue";
@@ -43,7 +43,7 @@ app.mount("#app");
 Create a new plugin in `plugins\vue-circle-flags.js`:
 
 ```js
-import CircleFlags from "vue-circle-flags";
+import { CircleFlags } from "vue-circle-flags";
 
 export default defineNuxtPlugin(nuxtApp => {
   nuxtApp.vueApp.component('CircleFlags', CircleFlags);
