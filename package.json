@@ -28,7 +28,8 @@
     "test-single": "vitest run",
     "coverage": "vitest run --coverage",
     "lint": "eslint --ext .js,.ts --ignore-path .eslintignore .",
-    "prettier-format": "prettier --vue-indent-script-and-style --config .prettierrc --write \"src/**/*.{ts,js,vue}\" \"test/**/*.{ts,js}\" \"utils/**/*.{ts,js}\""
+    "prettier-format": "prettier --vue-indent-script-and-style --config .prettierrc --write \"src/**/*.{ts,js,vue}\" \"test/**/*.{ts,js}\" \"utils/**/*.{ts,js}\"",
+    "prettier-check": "prettier --check --vue-indent-script-and-style --config .prettierrc \"src/**/*.{ts,js,vue}\" \"test/**/*.{ts,js}\" \"utils/**/*.{ts,js}\""
   },
   "dependencies": {
     "tslib": "^2.5.2",
