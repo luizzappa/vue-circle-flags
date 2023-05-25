@@ -2,6 +2,9 @@
 
 A Vue 3 component with 400+ circular SVG country flags 🚩. Base on [circle-flags](https://github.com/HatScripts/circle-flags)
 
+![image](https://github.com/luizzappa/vue-circle-flag/assets/65685842/15473c0d-3cdd-48b0-ac0f-cc65181995ed)
+
+
 👉 [Live demo](https://q3lwoq.csb.app/)
 
 ## Features
@@ -95,7 +98,7 @@ Once the plugin is registered in your app, in your template you can call it:
 
 | Property | Description | Type | Value
 |:--|:--|:--|:--|
-| size | Flag size | `string` | `small`, `medium`, `large` (for custom size see [here](#custom-size-) |
+| size | Flag size | `string` | `small`, `medium`, `large` (for custom size see [here](#custom-size-)) |
 | strokeWidth | Stroke size in pixels | `number` | `0` or `undefined` for no stroke |
 | strokeColor | Stroke color | `string` | e.g.: `#000000`, `red`, ... 
 | showFlagName | Show flag name in english when hover | `boolean` | e.g.: `true`, `false` |
