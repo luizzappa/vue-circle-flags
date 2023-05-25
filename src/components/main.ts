@@ -8,4 +8,4 @@ export default {
   }
 };
 
-export { CircleFlags, countryCodes, countryList };
+export { countryCodes, countryList };
