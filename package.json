@@ -1,7 +1,7 @@
 {
   "name": "vue-circle-flags",
   "private": false,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A vue component with a collection of 400+ circular SVG country flags. Wrapper of HatScripts/circle-flags",
   "type": "module",
   "files": [
