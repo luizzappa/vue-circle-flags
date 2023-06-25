@@ -49,7 +49,7 @@ Create a new plugin in `plugins\vue-circle-flags.js`:
 import CircleFlags from "vue-circle-flags";
 
 export default defineNuxtPlugin(nuxtApp => {
-  nuxtApp.vueApp.component('CircleFlags', CircleFlags);
+  nuxtApp.vueApp.use(CircleFlags);
 })
 ```
 
