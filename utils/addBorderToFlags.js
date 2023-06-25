@@ -24,7 +24,8 @@ for (let file of fs.readdirSync(flagsDir)) {
     } else {
       const xmlJson = xmljs.xml2js(svgFile),
         xmlJsonWithStroke = addStroke(xmlJson),
-        newXml = xmljs.js2xml(xmlJsonWithStroke);
+        xmlUniqueMaskId = uniqueIdMask(xmlJsonWithStroke, countryCode),
+        newXml = xmljs.js2xml(xmlUniqueMaskId);
 
       // Save vue SFC
       const newVue = injectSvg(newXml),
@@ -114,6 +115,26 @@ function addStroke(xml) {
     ]
   };
   xml.elements[0].elements.push(gCircle);
+
+  return xml;
+}
+
+/**
+ * Create unique id for every SVG mask
+ * @param {*} xmlSvg the XML of the SVG
+ * @param {string} countryCode the country code
+ * @returns
+ */
+function uniqueIdMask(xml, countryCode) {
+  const mask = xml.elements[0].elements[0],
+    gMask = xml.elements[0].elements[1],
+    newMaskId = `c_m_${countryCode}`;
+
+  // Change mask element id
+  mask.attributes.id = newMaskId;
+
+  // Change g url id
+  gMask.attributes.mask = `url(#${newMaskId})`;
 
   return xml;
 }

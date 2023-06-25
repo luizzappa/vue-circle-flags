@@ -4,8 +4,8 @@
     class="svg-circle-flags"
     :viewBox="`${viewBoxOrigin} ${viewBoxOrigin} ${svgSize} ${svgSize}`"
   >
-    <mask id="a"><circle cx="256" cy="256" r="256" fill="#fff" /></mask>
-    <g mask="url(#a)">
+    <mask id="c_m_rw"><circle cx="256" cy="256" r="256" fill="#fff" /></mask>
+    <g mask="url(#c_m_rw)">
       <title v-if="props.flagName">{{ props.flagName }}</title>
       <path fill="#496e2d" d="m0 378.5 254.1-22.1L512 378.5V512H0z" />
       <path fill="#ffda44" d="m0 256.1 255-30.3 257 30.3v122.4H0z" />
