@@ -4,8 +4,10 @@
     class="svg-circle-flags"
     :viewBox="`${viewBoxOrigin} ${viewBoxOrigin} ${svgSize} ${svgSize}`"
   >
-    <mask id="c_m_bt"><circle cx="256" cy="256" r="256" fill="#fff" /></mask>
-    <g mask="url(#c_m_bt)">
+    <mask :id="`${maskId}`">
+      <circle cx="256" cy="256" r="256" fill="#fff" />
+    </mask>
+    <g :mask="`url(#${maskId})`">
       <title v-if="props.flagName">{{ props.flagName }}</title>
       <path fill="#ffda44" d="M0 0h512L281 293.2 0 512z" />
       <path fill="#ff9811" d="M506.7 0 0 506.7v5.3h512V0h-5.3z" />
@@ -26,7 +28,7 @@
   </svg>
 </template>
 <script setup lang="ts">
-  import { computed } from 'vue';
+  import { computed, ref, onMounted } from 'vue';
 
   const props = withDefaults(
     defineProps<{
@@ -40,7 +42,11 @@
     }
   );
 
+  const maskId = ref<string>();
+
   const svgSize = computed(() => 512 + 2 * props.strokeWidth),
     viewBoxOrigin = computed(() => -props.strokeWidth),
     circleStroke = computed(() => 256 + props.strokeWidth / 2);
+
+  onMounted(() => (maskId.value = window.crypto.randomUUID()));
 </script>

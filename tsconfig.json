@@ -3,7 +3,7 @@
     "target": "es2020",
     "useDefineForClassFields": true,
     "module": "esnext",
-    "lib": ["es2020"],
+    "lib": ["es2020", "DOM"],
     "skipLibCheck": true,
 
     "allowJs": true,

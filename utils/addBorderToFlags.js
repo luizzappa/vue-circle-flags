@@ -24,7 +24,7 @@ for (let file of fs.readdirSync(flagsDir)) {
     } else {
       const xmlJson = xmljs.xml2js(svgFile),
         xmlJsonWithStroke = addStroke(xmlJson),
-        xmlUniqueMaskId = uniqueIdMask(xmlJsonWithStroke, countryCode),
+        xmlUniqueMaskId = uniqueIdMask(xmlJsonWithStroke),
         newXml = xmljs.js2xml(xmlUniqueMaskId);
 
       // Save vue SFC
@@ -122,19 +122,19 @@ function addStroke(xml) {
 /**
  * Create unique id for every SVG mask
  * @param {*} xmlSvg the XML of the SVG
- * @param {string} countryCode the country code
  * @returns
  */
-function uniqueIdMask(xml, countryCode) {
+function uniqueIdMask(xml) {
   const mask = xml.elements[0].elements[0],
-    gMask = xml.elements[0].elements[1],
-    newMaskId = `c_m_${countryCode}`;
+    gMask = xml.elements[0].elements[1];
 
   // Change mask element id
-  mask.attributes.id = newMaskId;
+  mask.attributes.id = undefined;
+  mask.attributes[':id'] = '`${maskId}`';
 
   // Change g url id
-  gMask.attributes.mask = `url(#${newMaskId})`;
+  gMask.attributes.mask = undefined;
+  gMask.attributes[':mask'] = '`url(#${maskId})`';
 
   return xml;
 }
@@ -148,21 +148,27 @@ function injectSvg(xmlSvg) {
   const template = `
     <template>{{svg}}</template>
     <script setup lang="ts">
-    import { computed } from 'vue';
+      import { computed, ref, onMounted } from 'vue';
 
-      const props = withDefaults(defineProps<{
-        flagName: string | undefined;
-        strokeColor?: string;
-        strokeWidth?: number;
-      }>(),
-      {
-        strokeColor: "#000",
-        strokeWidth: 0
-      });
+      const props = withDefaults(
+        defineProps<{
+          flagName: string | undefined;
+          strokeColor?: string;
+          strokeWidth?: number;
+        }>(),
+        {
+          strokeColor: '#000',
+          strokeWidth: 0
+        }
+      );
 
-      const svgSize = computed(() => 512 + 2*props.strokeWidth),
+      const maskId = ref<string>();
+
+      const svgSize = computed(() => 512 + 2 * props.strokeWidth),
         viewBoxOrigin = computed(() => -props.strokeWidth),
-        circleStroke = computed(() => 256 + props.strokeWidth/2);
+        circleStroke = computed(() => 256 + props.strokeWidth / 2);
+
+      onMounted(() => maskId.value = window.crypto.randomUUID() )
     </script>
   `;
 
