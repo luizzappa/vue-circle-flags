@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import * as xmljs from 'xml-js';
+import { randomUUID } from 'node:crypto';
 import countryNames from './country-names.json' assert { type: 'json' };
 
 const caseDir = path.dirname(fileURLToPath(import.meta.url)),
@@ -126,15 +127,16 @@ function addStroke(xml) {
  */
 function uniqueIdMask(xml) {
   const mask = xml.elements[0].elements[0],
-    gMask = xml.elements[0].elements[1];
+    gMask = xml.elements[0].elements[1],
+    maskId = randomUUID();
 
   // Change mask element id
   mask.attributes.id = undefined;
-  mask.attributes[':id'] = '`${maskId}`';
+  mask.attributes['id'] = `${maskId}`;
 
   // Change g url id
   gMask.attributes.mask = undefined;
-  gMask.attributes[':mask'] = '`url(#${maskId})`';
+  gMask.attributes['mask'] = `url(#${maskId})`;
 
   return xml;
 }
@@ -148,7 +150,7 @@ function injectSvg(xmlSvg) {
   const template = `
     <template>{{svg}}</template>
     <script setup lang="ts">
-      import { computed, ref, onMounted } from 'vue';
+      import { computed } from 'vue';
 
       const props = withDefaults(
         defineProps<{
@@ -162,13 +164,9 @@ function injectSvg(xmlSvg) {
         }
       );
 
-      const maskId = ref<string>();
-
       const svgSize = computed(() => 512 + 2 * props.strokeWidth),
         viewBoxOrigin = computed(() => -props.strokeWidth),
         circleStroke = computed(() => 256 + props.strokeWidth / 2);
-
-      onMounted(() => maskId.value = window.crypto.randomUUID() )
     </script>
   `;
 
