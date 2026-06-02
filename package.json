@@ -11,6 +11,7 @@
   "module": "./dist/vue-circle-flags.es.js",
   "exports": {
     ".": {
+      "types": "./dist/components/main.d.ts",
       "import": "./dist/vue-circle-flags.es.js",
       "require": "./dist/vue-circle-flags.cjs.js"
     },
