@@ -5,7 +5,7 @@ A Vue 3 component with 400+ circular SVG country flags 🚩 (base on [circle-fla
 ![image](https://github.com/luizzappa/vue-circle-flag/assets/65685842/15473c0d-3cdd-48b0-ac0f-cc65181995ed)
 
 
-👉 [Live demo](https://q3lwoq.csb.app/)
+👉 [Live demo](https://luizzappa.github.io/vue-circle-flags/)
 
 ## Features
 
