@@ -2,7 +2,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path';
-import typescript from '@rollup/plugin-typescript'
 import dts from "vite-plugin-dts";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -17,12 +16,6 @@ export default defineConfig({
     dts({
       insertTypesEntry: true
     }),
-    typescript({
-      exclude: [
-        "dist",
-        "test/**/*.ts"
-      ]
-    }),
   ],
   test: {
     globals: true,
@@ -30,6 +23,7 @@ export default defineConfig({
   },
   build: {
     cssCodeSplit: true,
+    sourcemap: true,
     lib: {
       entry: "src/components/main.ts",
       name: 'vueCircleFlags',
@@ -46,7 +40,6 @@ export default defineConfig({
           if (assetInfo.name === 'main.css') return 'vue-circle-flags.css';
           return assetInfo.name;
         },
-        sourcemap: true,
         exports: "named",
         globals: {
           vue: 'Vue',
